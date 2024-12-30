@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjvsg3wgn4j1p"]
+
+[ext_resource type="PackedScene" uid="uid://dhni6m0ru7h53" path="res://scenes/mochi/mochi.tscn" id="1_lbheg"]
+[ext_resource type="PackedScene" uid="uid://bid7k0ovh6gyp" path="res://scenes/levels/level00/level00.tscn" id="2_pw28p"]
+
+[node name="Main" type="Node"]
+
+[node name="Mochi" parent="." instance=ExtResource("1_lbheg")]
+
+[node name="Level00" parent="." instance=ExtResource("2_pw28p")]
