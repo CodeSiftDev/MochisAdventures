@@ -6,6 +6,6 @@
 [node name="Main" type="Node"]
 
 [node name="Mochi" parent="." instance=ExtResource("1_lbheg")]
-position = Vector2(342, 160)
+scale = Vector2(0.4, 0.4)
 
 [node name="Level00" parent="." instance=ExtResource("2_pw28p")]

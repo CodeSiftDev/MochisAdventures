@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bid7k0ovh6gyp"]
+[gd_scene load_steps=5 format=3 uid="uid://bid7k0ovh6gyp"]
 
 [ext_resource type="Texture2D" uid="uid://ddpb1d0edbat3" path="res://scenes/levels/level00/floor.png" id="1_2ug2w"]
+[ext_resource type="Texture2D" uid="uid://dnamiqy1qgtdg" path="res://scenes/levels/level00/background1.png" id="2_nh6nn"]
+[ext_resource type="Texture2D" uid="uid://c3eboncqraq14" path="res://scenes/levels/level00/background2.png" id="3_xtjkh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynwa5"]
 
@@ -8,15 +10,30 @@
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 material = SubResource("ShaderMaterial_ynwa5")
-position = Vector2(312, 74)
-scale = Vector2(0.25, 0.25)
-metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-920, -22)
+position = Vector2(-782, -193)
+scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(-226, 484, -164, 488, -106, 490, -74, 484, -46, 474, -24, 470, 2, 476, 34, 494, 58, 508, 82, 518, 118, 516, 190, 500, 262, 484, 306, 480, 336, 490, 404, 510, 454, 520, 502, 524, 594, 524, 624, 526, 716, 544, 782, 534, 838, 532, 892, 544, 922, 548, 984, 538, 1056, 522, 1122, 508, 1178, 496, 1338, 494, 1468, 508, 1544, 516, 1578, 510, 1626, 490, 1700, 478, 1766, 462, 1786, 462, 1810, 464, 1894, 490, 1932, 494, 1968, 498, 2066, 490, 2108, 490, 2166, 496, 2196, 490, 2266, 456, 2298, 448, 2332, 450, 2376, 458, 2432, 472, 2522, 496, 2582, 504, 2620, 506, 2656, 502, 2690, 486, 2736, 478, 2778, 474, 2846, 484, 2898, 496, 2944, 490, 3002, 476, 3050, 468, 3130, 468, 3178, 470, 3238, 458, 3326, 432, 3362, 426, 3394, 436, 3440, 448, 3484, 442, 3484, 604, -360, 606, -360, 496, -324, 504, -262, 488)
 
 [node name="Floor" type="Sprite2D" parent="StaticBody2D"]
 use_parent_material = true
-position = Vector2(644, 364)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_2ug2w")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_offset = Vector2(200, 108)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_xtjkh")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.75, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nh6nn")

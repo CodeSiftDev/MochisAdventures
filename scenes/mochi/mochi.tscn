@@ -188,7 +188,6 @@ radius = 46.0
 height = 144.0
 
 [node name="Mochi" type="Node2D"]
-position = Vector2(43, 29)
 scale = Vector2(0.2, 0.2)
 metadata/_edit_group_ = true
 
@@ -197,17 +196,17 @@ use_parent_material = true
 script = ExtResource("1_cncpk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-use_parent_material = true
-position = Vector2(594, 55)
 sprite_frames = SubResource("SpriteFrames_xjajx")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(599, 91)
+position = Vector2(0, 35)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_uf2fu")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(600, 90)
-limit_bottom = 216
+scale = Vector2(0.5, 0.5)
+limit_top = -108
+limit_bottom = 108
+limit_smoothed = true
 position_smoothing_enabled = true
